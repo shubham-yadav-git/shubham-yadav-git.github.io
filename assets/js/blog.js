@@ -1,4 +1,4 @@
-const endpoint = 'https://gql.hashnode.com';
+const endpoint = 'https://api.hashnode.com';
       const query = `
         query User($username: String!, $page: Int!) {
           user(username: $username) {
