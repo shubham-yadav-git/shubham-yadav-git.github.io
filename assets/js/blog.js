@@ -48,8 +48,8 @@ query Publication {
         })
           .then((res) => res.json())
           .then((json) => {
-            const articles = json.data.user.publication.posts;
-            articles.forEach((article) => {
+            const articles = json.data.publication.posts.edges;
+            articles.forEach((article.node) => {
               const card = document.createElement('div');
               card.classList.add('card');
 
