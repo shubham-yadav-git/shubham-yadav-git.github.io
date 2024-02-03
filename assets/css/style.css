@@ -1102,3 +1102,11 @@ section {
     padding-right: 20px 15px;
   }
 }
+
+/* ====================My addition====================== */
+cite {
+  display: block;
+  text-align: right;
+  font-size: 0.4rem;
+  margin-right: 0.3rem;
+}
