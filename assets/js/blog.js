@@ -1,17 +1,29 @@
 const endpoint = 'https://gql.hashnode.com';
       const query = `
-        query Publication {
-              publication(host: "computergeeks.hashnode.dev") {
-              posts(page: $page) {
-                title
-                brief
-                slug
-                coverImage
-              }
-            }
+query Publication {
+  publication(host: "computergeeks.hashnode.dev") {
+    isTeam,
+    title,
+    posts(first: 10, after: "NjQxZTc4NGY0M2NiMzc2YjAyNzNkMzU4XzIwMjMtMDMtMjVUMDQ6Mjc6NTkuNjQxWg==") {
+      edges {
+        node {
+          title,
+          brief,
+          url,
+          slug,
+          coverImage {
+            attribution
+            photographer
           }
         }
-      `;
+      }
+      pageInfo {
+        endCursor,
+        hasNextPage
+      }
+    }
+  }
+}`;
       const variables = {
         username: 'shubhamblogs',
         page: 0,
