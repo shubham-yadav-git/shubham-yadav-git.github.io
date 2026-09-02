@@ -139,8 +139,8 @@ img {
 #header .profile .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #212431;
-  color: #fff;
+  background: var(--primary-soft);
+  color: var(--heading);
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -152,8 +152,8 @@ img {
 }
 
 #header .profile .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
+  background: var(--primary);
+  color: #111820;
   text-decoration: none;
 }
 
@@ -194,7 +194,7 @@ img {
 .nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: #a8a9b4;
+  color: var(--muted);
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -205,7 +205,7 @@ img {
 .nav-menu a:focus i {
   font-size: 24px;
   padding-right: 8px;
-  color: #6f7180;
+  color: rgba(201, 166, 107, 0.58);
 }
 
 .nav-menu a:hover,
@@ -220,7 +220,7 @@ img {
 .nav-menu .active i,
 .nav-menu .active:focus i,
 .nav-menu li:hover>a i {
-  color: #149ddd;
+  color: var(--primary);
 }
 
 /* Mobile Navigation */
@@ -233,8 +233,8 @@ img {
   font-size: 24px;
   transition: all 0.4s;
   outline: none !important;
-  background-color: #149ddd;
-  color: #fff;
+  background-color: var(--primary);
+  color: #111820;
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -321,6 +321,7 @@ img {
 }
 
 #hero h1 {
+  display: none;
   margin: 0 0 10px 0;
   font-size: 64px;
   font-weight: 700;
@@ -331,8 +332,8 @@ img {
 
 #hero p {
   color: #edf7ff;
-  margin-bottom: 30px;
-  font-size: 26px;
+  margin: 12px 0 30px;
+  font-size: 32px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -392,7 +393,7 @@ img {
 
   #hero p {
     font-size: 20px;
-    margin-bottom: 24px;
+    margin: 10px 0 24px;
   }
 
   #hero .hero-badge {
@@ -409,6 +410,12 @@ img {
   #hero .hero-actions .btn {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px), (max-width: 768px) {
+  #hero .hero-name {
+    display: block;
   }
 }
 
