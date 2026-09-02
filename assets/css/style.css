@@ -8,18 +8,37 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+:root {
+  --bg: #f6f2ec;
+  --bg-soft: #f0ebe3;
+  --panel: #fffdfb;
+  --panel-alt: #f8f4ef;
+  --sidebar: #171b1f;
+  --sidebar-strong: #20262d;
+  --primary: #c9a66b;
+  --primary-dark: #a8844a;
+  --primary-soft: rgba(201, 166, 107, 0.14);
+  --text: #1d242b;
+  --muted: #5f6770;
+  --heading: #1b1f25;
+  --border: rgba(27, 31, 37, 0.08);
+  --shadow: 0 18px 45px rgba(23, 27, 31, 0.12);
+}
+
 body {
   font-family: "Open Sans", sans-serif;
-  color: #272829;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
 }
 
 a {
-  color: #149ddd;
+  color: var(--primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: #37b3ed;
+  color: var(--primary-dark);
   text-decoration: none;
 }
 
@@ -30,6 +49,11 @@ h4,
 h5,
 h6 {
   font-family: "Raleway", sans-serif;
+  color: var(--heading);
+}
+
+img {
+  max-width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -78,15 +102,17 @@ h6 {
   z-index: 9997;
   transition: all 0.5s;
   padding: 0 15px;
-  background: #040b14;
+  background: linear-gradient(180deg, var(--sidebar) 0%, var(--sidebar-strong) 100%);
   overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 #header .profile img {
-  margin: 15px auto;
+  margin: 18px auto 14px;
   display: block;
-  width: 120px;
-  border: 8px solid #2c2f3f;
+  width: 124px;
+  border: 5px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 #header .profile h1 {
@@ -226,21 +252,36 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  position: relative;
   width: 100%;
   height: 100vh;
-  background: url("hero-bg.jpg") top center;
-  background-size: cover;
+  background:
+    radial-gradient(circle at top left, rgba(201, 166, 107, 0.22), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.35), transparent 30%),
+    linear-gradient(135deg, #1b1f25 0%, #2a2f36 45%, #12161a 100%);
+  overflow: hidden;
 }
 
 #hero:before {
   content: "";
-  background: rgba(5, 13, 24, 0.3);
   position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(15, 18, 21, 0.70), rgba(27, 31, 37, 0.40));
   z-index: 1;
+}
+
+#hero:after {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  right: -100px;
+  top: 90px;
+  border-radius: 50%;
+  background: rgba(201, 166, 107, 0.08);
+  border: 1px solid rgba(201, 166, 107, 0.28);
+  box-shadow: 0 0 0 28px rgba(201, 166, 107, 0.04), 0 0 80px rgba(201, 166, 107, 0.12);
+  z-index: 0;
 }
 
 #hero .hero-container {
@@ -249,44 +290,120 @@ h6 {
   min-width: 300px;
 }
 
+#hero .hero-card {
+  background: rgba(23, 27, 31, 0.50);
+  border: 1px solid rgba(201, 166, 107, 0.24);
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 42px 46px;
+  max-width: 680px;
+}
+
+#hero .hero-badge {
+  display: inline-block;
+  color: #f7edd9;
+  background: rgba(201, 166, 107, 0.12);
+  border: 1px solid rgba(201, 166, 107, 0.36);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
 #hero h1 {
   margin: 0 0 10px 0;
   font-size: 64px;
   font-weight: 700;
-  line-height: 56px;
+  line-height: 1.05;
   color: #fff;
+  letter-spacing: -0.04em;
 }
 
 #hero p {
-  color: #fff;
-  margin-bottom: 50px;
+  color: #edf7ff;
+  margin-bottom: 30px;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
 
 #hero p span {
-  color: #fff;
+  color: #f9e9c5;
   padding-bottom: 4px;
   letter-spacing: 1px;
-  border-bottom: 3px solid #149ddd;
+  border-bottom: 3px solid var(--primary);
 }
 
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
-  }
+#hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+#hero .hero-actions .btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#hero .hero-actions .btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 15px 30px rgba(201, 166, 107, 0.22);
+  color: #1b1f25;
+}
+
+#hero .hero-actions .btn-primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+#hero .hero-actions .btn-outline-light {
+  border-width: 1.5px;
+  color: #fff;
+}
+
+#hero .hero-actions .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
 }
 
 @media (max-width: 768px) {
-  #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+  #hero .hero-card {
+    padding: 28px 24px;
+    max-width: 90vw;
   }
 
-  #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
+  #hero h1 {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  #hero p {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  #hero .hero-badge {
+    letter-spacing: 0.08em;
+    font-size: 10px;
+    padding: 8px 14px;
+  }
+
+  #hero .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #hero .hero-actions .btn {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -294,12 +411,12 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 80px 0;
   overflow: hidden;
 }
 
 .section-bg {
-  background: #f5f8fd;
+  background: linear-gradient(180deg, var(--bg-soft) 0%, #f7f9fc 100%);
 }
 
 .section-title {
@@ -307,27 +424,30 @@ section {
 }
 
 .section-title h2 {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
   position: relative;
-  color: #173b6c;
+  color: var(--heading);
 }
 
 .section-title h2::after {
   content: "";
   position: absolute;
   display: block;
-  width: 50px;
+  width: 52px;
   height: 3px;
-  background: #149ddd;
+  background: linear-gradient(90deg, var(--primary), #7ccff5);
   bottom: 0;
   left: 0;
+  border-radius: 999px;
 }
 
 .section-title p {
   margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.03rem;
 }
 
 /*--------------------------------------------------------------
@@ -335,34 +455,39 @@ section {
 --------------------------------------------------------------*/
 .about .content h3 {
   font-weight: 700;
-  font-size: 26px;
-  color: #173b6c;
+  font-size: clamp(1.7rem, 2vw, 2.2rem);
+  color: var(--heading);
+  margin-bottom: 18px;
 }
 
 .about .content ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .about .content ul li {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   display: flex;
   align-items: center;
+  color: var(--text);
 }
 
 .about .content ul strong {
   margin-right: 10px;
+  color: var(--heading);
 }
 
 .about .content ul i {
   font-size: 16px;
-  margin-right: 5px;
-  color: #149ddd;
+  margin-right: 8px;
+  color: var(--primary);
   line-height: 0;
 }
 
 .about .content p:last-child {
   margin-bottom: 0;
+  color: var(--muted);
 }
 
 /*--------------------------------------------------------------
@@ -461,14 +586,16 @@ section {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #050d18;
+  color: var(--heading);
 }
 
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #1f5297;
+  border-left: 2px solid rgba(20, 157, 221, 0.4);
   position: relative;
+  background: rgba(255, 255, 255, 0.26);
+  border-radius: 0 14px 14px 0;
 }
 
 .resume .resume-item h4 {
@@ -836,9 +963,11 @@ section {
 
 .contact .info {
   padding: 30px;
-  background: #fff;
+  background: var(--panel);
   width: 100%;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  border-radius: 20px;
 }
 
 .contact .info i {
@@ -1081,7 +1210,8 @@ section {
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: #040b14;
+  background: linear-gradient(180deg, var(--sidebar) 0%, var(--sidebar-strong) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 #footer .copyright {
