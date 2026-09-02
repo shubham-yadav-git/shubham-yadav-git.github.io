@@ -116,6 +116,8 @@ img {
   margin: 18px auto 14px;
   display: block;
   width: 124px;
+  height: 124px;
+  object-fit: cover;
   border: 5px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
