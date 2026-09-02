@@ -166,10 +166,18 @@ img {
 @media (max-width: 1199px) {
   #header {
     left: -300px;
+    width: min(300px, calc(100vw - 32px));
   }
 
   #main {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  #header .profile img {
+    width: 104px;
+    height: 104px;
   }
 }
 
