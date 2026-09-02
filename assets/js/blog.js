@@ -34,6 +34,8 @@ const fallbackArticles = [
 const articlesList = document.getElementById("articles");
 const loadMoreButton = document.getElementById("load-more-button");
 const liveFeedUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://computergeeks.hashnode.dev/rss.xml");
+let loadedArticles = [];
+let visibleArticleCount = 6;
 
 function stripHtml(html) {
   return String(html || "")
@@ -97,24 +99,35 @@ function createArticleCard(item) {
   return card;
 }
 
-function renderArticles(items) {
+function renderVisibleArticles() {
   if (!articlesList) return;
 
   articlesList.innerHTML = "";
 
-  if (!items || !items.length) {
+  if (!loadedArticles.length) {
     articlesList.innerHTML = "<p class='text-center'>Blog posts are temporarily unavailable.</p>";
     if (loadMoreButton) loadMoreButton.style.display = "none";
     return;
   }
 
-  items.slice(0, 6).forEach((item) => {
+  loadedArticles.slice(0, visibleArticleCount).forEach((item) => {
     articlesList.appendChild(createArticleCard(item));
   });
 
   if (loadMoreButton) {
-    loadMoreButton.style.display = "none";
+    loadMoreButton.style.display = visibleArticleCount < loadedArticles.length ? "inline-block" : "none";
   }
+}
+
+function renderArticles(items) {
+  loadedArticles = Array.isArray(items) ? items : [];
+  visibleArticleCount = Math.min(6, loadedArticles.length);
+  renderVisibleArticles();
+}
+
+function loadMoreArticles() {
+  visibleArticleCount = Math.min(visibleArticleCount + 3, loadedArticles.length);
+  renderVisibleArticles();
 }
 
 async function fetchArticles() {
@@ -148,5 +161,5 @@ async function fetchArticles() {
 fetchArticles();
 
 if (loadMoreButton) {
-  loadMoreButton.addEventListener("click", fetchArticles);
+  loadMoreButton.addEventListener("click", loadMoreArticles);
 }
