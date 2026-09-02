@@ -33,6 +33,7 @@ const fallbackArticles = [
 
 const articlesList = document.getElementById("articles");
 const loadMoreButton = document.getElementById("load-more-button");
+const liveFeedUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://computergeeks.hashnode.dev/rss.xml");
 
 function stripHtml(html) {
   return String(html || "")
@@ -120,14 +121,27 @@ async function fetchArticles() {
   if (!articlesList) return;
 
   try {
-    const response = await fetch("assets/data/blog.json", { cache: "no-store" });
+    const response = await fetch(liveFeedUrl, { cache: "no-store" });
     if (!response.ok) throw new Error(`Blog data request failed: ${response.status}`);
 
-    const items = await response.json();
+    const data = await response.json();
+    if (data.status !== "ok" || !Array.isArray(data.items)) throw new Error("Live blog feed returned an invalid response");
+
+    const items = data.items.map((item) => ({
+      title: item.title,
+      link: item.link,
+      description: item.description || item.content || "",
+      image: item.thumbnail || item.enclosure?.link || ""
+    }));
     renderArticles(items);
   } catch (error) {
-    console.warn("Local blog data unavailable; using fallback articles.", error);
-    renderArticles(fallbackArticles);
+    console.warn("Live blog feed unavailable; loading cached articles.", error);
+    try {
+      const cachedResponse = await fetch("assets/data/blog.json", { cache: "no-store" });
+      renderArticles(await cachedResponse.json());
+    } catch (cachedError) {
+      renderArticles(fallbackArticles);
+    }
   }
 }
 
