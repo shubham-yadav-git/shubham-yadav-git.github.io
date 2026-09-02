@@ -997,12 +997,19 @@ section {
 }
 
 .contact .info {
-  padding: 30px;
+  padding: 24px;
   background: linear-gradient(180deg, rgba(23, 31, 39, 0.96), rgba(18, 24, 30, 0.96));
   width: 100%;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
   border-radius: 20px;
+}
+
+.contact .info .address,
+.contact .info .email,
+.contact .info .phone {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .contact .info i {
@@ -1028,14 +1035,27 @@ section {
 }
 
 .contact .info p {
-  padding: 0 0 10px 60px;
-  margin-bottom: 20px;
+  padding: 0 0 6px 60px;
+  margin-bottom: 10px;
   font-size: 14px;
   color: var(--muted);
 }
 
+.contact .info a {
+  color: var(--heading);
+  transition: color 0.3s ease-in-out;
+}
+
+.contact .info a:hover {
+  color: var(--primary);
+}
+
 .contact .info .email p {
-  padding-top: 5px;
+  padding-top: 2px;
+}
+
+.contact .info iframe {
+  height: 220px;
 }
 
 .contact .info .social-links {
@@ -1065,8 +1085,8 @@ section {
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: #149ddd;
-  color: #fff;
+  background: var(--primary);
+  color: #111820;
 }
 
 .contact .php-email-form {
@@ -1183,7 +1203,7 @@ section {
 }
 
 .blog .card-img-top {
-  height: 220px;
+  height: 180px;
   width: 100%;
   object-fit: cover;
   display: block;
@@ -1218,10 +1238,26 @@ section {
 }
 
 #articles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  column-count: 3;
+  column-gap: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+#articles .card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  #articles {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 575px) {
+  #articles {
+    column-count: 1;
+  }
 }
 
 #load-more-button {
