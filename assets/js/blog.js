@@ -31,10 +31,6 @@ const fallbackArticles = [
   }
 ];
 
-const rssUrls = [
-  "https://computergeeks.hashnode.dev/rss.xml",
-  "https://computergeeks.hashnode.dev/rss"
-];
 const articlesList = document.getElementById("articles");
 const loadMoreButton = document.getElementById("load-more-button");
 
@@ -123,42 +119,16 @@ function renderArticles(items) {
 async function fetchArticles() {
   if (!articlesList) return;
 
-  for (const url of rssUrls) {
-    try {
-      const response = await fetch(url, { mode: "cors" });
-      if (!response.ok) continue;
+  try {
+    const response = await fetch("assets/data/blog.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`Blog data request failed: ${response.status}`);
 
-      const xmlText = await response.text();
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(xmlText, "application/xml");
-      const items = Array.from(xml.querySelectorAll("item")).slice(0, 10);
-
-      if (!items.length) {
-        renderArticles(fallbackArticles);
-        return;
-      }
-
-      const parsedItems = items.map((item) => {
-        const description = item.querySelector("description")?.textContent || item.querySelector("content\\:encoded")?.textContent || "";
-        const image = item.querySelector("enclosure")?.getAttribute("url") || item.querySelector("media\\:content")?.getAttribute("url") || "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80";
-
-        return {
-          title: item.querySelector("title")?.textContent || "Untitled article",
-          link: item.querySelector("link")?.textContent || "#",
-          description,
-          content: item.querySelector("content\\:encoded")?.textContent || "",
-          image
-        };
-      });
-
-      renderArticles(parsedItems);
-      return;
-    } catch (error) {
-      console.warn(`Blog feed unavailable at ${url}:`, error);
-    }
+    const items = await response.json();
+    renderArticles(items);
+  } catch (error) {
+    console.warn("Local blog data unavailable; using fallback articles.", error);
+    renderArticles(fallbackArticles);
   }
-
-  renderArticles(fallbackArticles);
 }
 
 fetchArticles();
