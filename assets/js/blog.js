@@ -69,7 +69,8 @@ function createArticleCard(item) {
   const img = document.createElement("img");
   img.classList.add("card-img-top");
   img.src = imageUrl;
-  img.alt = item.title;
+  img.alt = `${item.title} - Article by Shubham Yadav`;
+  img.loading = "lazy";
   img.onerror = function () {
     this.onerror = null;
     this.src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80";

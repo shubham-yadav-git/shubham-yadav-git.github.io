@@ -1,0 +1,6 @@
+# robots.txt for https://shubhamy.in
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://shubhamy.in/sitemap.xml
