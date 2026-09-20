@@ -106,7 +106,7 @@ img {
   transition: all ease-in-out 0.5s;
   z-index: 9997;
   transition: all 0.5s;
-  padding: 0 15px;
+  padding: 0;
   background: linear-gradient(180deg, var(--sidebar) 0%, var(--sidebar-strong) 100%);
   overflow-y: auto;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
@@ -187,9 +187,12 @@ img {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Desktop Navigation */
+#header .profile {
+  padding: 0 15px;
+}
+
 .nav-menu {
-  padding: 30px 0 0 0;
+  padding: 30px 15px 0 15px;
 }
 
 .nav-menu * {
@@ -1413,6 +1416,136 @@ cite {
   text-align: right;
   font-size: 0.4rem;
   margin-right: 0.3rem;
+}
+
+.typo-logo {
+  display: none;
+}
+
+.opt4-card-wrapper {
+  margin: 4px 4px 6px 4px;
+}
+
+.typo-logo-link {
+  display: block;
+  text-decoration: none !important;
+  width: 100%;
+}
+
+.typo-logo-link:hover,
+.typo-logo-link:focus,
+.typo-logo-link:active,
+.typo-logo-link:visited {
+  text-decoration: none !important;
+}
+
+.opt4-card {
+  background: 
+    radial-gradient(ellipse at 100% 0%, rgba(140, 90, 30, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(120, 75, 20, 0.3) 0%, transparent 50%),
+    linear-gradient(160deg, #1c2330 0%, #111820 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 28px 22px 22px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Wavy lines across top */
+.opt4-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 55px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='55'%3E%3Cpath d='M0,15 Q50,5 100,18 Q150,30 200,14 Q250,4 300,15' stroke='rgba(201,166,107,0.2)' stroke-width='1' fill='none'/%3E%3Cpath d='M0,28 Q50,18 100,30 Q150,42 200,27 Q250,17 300,28' stroke='rgba(201,166,107,0.12)' stroke-width='1' fill='none'/%3E%3Cpath d='M0,40 Q50,30 100,42 Q150,54 200,39 Q250,29 300,40' stroke='rgba(201,166,107,0.06)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-size: 300px 55px;
+  background-repeat: repeat-x;
+  pointer-events: none;
+}
+
+.opt4-card::after {
+  display: none;
+}
+
+.typo-logo-link:hover .opt4-card {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+}
+
+.opt4-name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  text-decoration: none !important;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.opt4-tagline {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-top: 7px;
+  text-decoration: none !important;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+/* Remove old profile img rules */
+#header .profile img {
+  display: none;
+}
+
+/* Clean up unused typo classes */
+.typo-first-light, .typo-first-bold, .typo-name-block,
+.typo-rule, .typo-rule-line, .typo-role,
+.typo-first, .typo-last, .typo-divider {
+  display: none;
+}
+
+.opt4-name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+  text-decoration: none !important;
+  position: relative;
+  z-index: 1;
+}
+
+.opt4-tagline {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-top: 7px;
+  text-decoration: none !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Remove old profile img rules */
+#header .profile img {
+  display: none;
+}
+
+/* Clean up unused typo classes */
+.typo-first-light, .typo-first-bold, .typo-name-block,
+.typo-rule, .typo-rule-line, .typo-role,
+.typo-first, .typo-last, .typo-divider {
+  display: none;
 }
 
 /*--------------------------------------------------------------
