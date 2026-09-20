@@ -1487,9 +1487,9 @@ cite {
 
 .opt4-tagline {
   font-family: "Montserrat", sans-serif;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--primary);
   margin-top: 7px;
@@ -1497,6 +1497,8 @@ cite {
   position: relative;
   z-index: 1;
   display: block;
+  white-space: nowrap;
+  width: fit-content;
 }
 
 /* Remove old profile img rules */
@@ -1518,19 +1520,6 @@ cite {
   color: #ffffff;
   letter-spacing: -0.2px;
   line-height: 1.25;
-  text-decoration: none !important;
-  position: relative;
-  z-index: 1;
-}
-
-.opt4-tagline {
-  font-family: "Montserrat", sans-serif;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--primary);
-  margin-top: 7px;
   text-decoration: none !important;
   position: relative;
   z-index: 1;
