@@ -255,6 +255,7 @@ a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
 }
 
 .skills__group { margin-bottom: 24px; }
+.skills__group ul { list-style: none; }
 
 .skills__group h3 {
   font-variant-caps: all-small-caps;
@@ -325,7 +326,6 @@ a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
 }
 .text-button:hover { color: var(--accent); border-color: currentColor; }
 
-.loading { color: var(--muted); font-style: italic; }
 
 /* ---------- Contact ---------- */
 

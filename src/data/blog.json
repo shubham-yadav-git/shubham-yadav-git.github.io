@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Senior Python Backend Developer Interview Guide",
+    "link": "https://computergeeks.hashnode.dev/senior-python-backend-developer-interview-guide",
+    "description": "\ud83d\udc0d Python Core Concepts 1. Object-Oriented Programming (OOP) Classes and Inheritance class Animal: def __init__(self, name, species): self.name = name self.species = species def __str__(self): return f\"{self.name} is ..."
+  },
+  {
+    "title": "Building a Complete E-commerce Website with Django: A Step-by-Step Tutorial",
+    "link": "https://computergeeks.hashnode.dev/building-a-complete-e-commerce-website-with-django-a-step-by-step-tutorial",
+    "description": "Creating a complete e-commerce app is a complex task that involves many different components. In this tutorial, we'll go through the steps for building a basic e-commerce app with Django. We'll cover the following topics: Setting up the project and ..."
+  },
+  {
+    "title": "How to add a custom widget to django-jet admin panel with custom dashboard?",
+    "link": "https://computergeeks.hashnode.dev/how-to-add-a-custom-widget-to-django-jet-admin-panel-with-custom-dashboard",
+    "description": "here's a step-by-step tutorial for adding a custom widget named TotalOrders to the Django-jet admin panel with a custom dashboard: First, make sure that you have installed the Django-jet library by running pip install django-jet. Next, create a Dja..."
+  },
+  {
+    "title": "Getting Started with Django",
+    "link": "https://computergeeks.hashnode.dev/getting-started-with-django",
+    "description": "Django is a popular open-source web framework written in Python. It follows the Model-View-Controller (MVC) architectural pattern and is designed to make web development faster and easier. With Django, you can quickly build complex web applications w..."
+  },
+  {
+    "title": "Docker Swarm Management",
+    "link": "https://computergeeks.hashnode.dev/docker-swarm-management",
+    "description": "Docker Swarm is a native clustering and orchestration solution for Docker containers. It enables you to manage a group of Docker nodes as a single virtual system. With Docker Swarm, you can easily scale your applications, orchestrate the deployment o..."
+  },
+  {
+    "title": "Docker Swarm Cheatsheet",
+    "link": "https://computergeeks.hashnode.dev/docker-swarm-cheatsheet",
+    "description": "These commands are used to manage a Docker Swarm cluster, create and manage Docker services, and manage Docker networks. docker network create -d overlay collabnet creates a new Docker overlay network named \"collabnet\". docker network ls lists all ..."
+  },
+  {
+    "title": "Docker Swarm",
+    "link": "https://computergeeks.hashnode.dev/docker-swarm",
+    "description": "What is a docker swarm? Docker Swarm is a tool that makes it easier to manage multiple Docker containers. With Docker Swarm, you can group containers and treat them as a single unit. This makes it easier to deploy, manage, and scale applications. Thi..."
+  },
+  {
+    "title": "Docker Network",
+    "link": "https://computergeeks.hashnode.dev/docker-network",
+    "description": "Docker Networking: An Introduction Docker containers are a popular tool for deploying applications in a lightweight and portable manner. But to be truly useful, containers need to be able to communicate with each other, as well as with the wider netw..."
+  },
+  {
+    "title": "Docker",
+    "link": "https://computergeeks.hashnode.dev/docker",
+    "description": "Introduction Docker is a technology that helps make computer programs work better. It does this by putting the program and everything it needs to run (like libraries and other files) into a special package called a container. This makes it easier to ..."
+  },
+  {
+    "title": "Request and Response",
+    "link": "https://computergeeks.hashnode.dev/request-and-response",
+    "description": "Request and response cycle The request-response cycle refers to the sequence of events that occur when a client sends an HTTP request to a server and the server sends back an HTTP response. The cycle includes the following steps: The client sends an..."
+  }
+]

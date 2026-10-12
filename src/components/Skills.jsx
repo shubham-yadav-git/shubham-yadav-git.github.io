@@ -41,7 +41,7 @@ export default function Skills() {
         {GROUPS.map((group) => (
           <div key={group.name} className="skills__group">
             <h3>{group.name}</h3>
-            <ul style={{ listStyle: 'none' }}>
+            <ul>
               {group.skills.map(([name, pct]) => (
                 <li key={name} className="leader">
                   <span>{name}</span>
