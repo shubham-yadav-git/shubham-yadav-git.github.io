@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Senior Python Backend Developer Interview Guide",
+    "link": "https://computergeeks.hashnode.dev/senior-python-backend-developer-interview-guide",
+    "description": "\ud83d\udc0d Python Core Concepts\n1. Object-Oriented Programming (OOP)\nClasses and Inheritance\nclass Animal:\n    def __init__(self, name, species):\n        self.name = name\n        self.species = species\n\n    def __str__(self):\n        return f\"{self.name} is ...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/Nz0LoJB4d0g/upload/ea5466cb80df83940c3f10b6221202ab.jpeg"
+  },
+  {
+    "title": "Building a Complete E-commerce Website with Django: A Step-by-Step Tutorial",
+    "link": "https://computergeeks.hashnode.dev/building-a-complete-e-commerce-website-with-django-a-step-by-step-tutorial",
+    "description": "Creating a complete e-commerce app is a complex task that involves many different components. In this tutorial, we'll go through the steps for building a basic e-commerce app with Django. We'll cover the following topics:\n\nSetting up the project and ...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/BI465ksrlWs/upload/554733da2adc135fddc45eede09696ce.jpeg"
+  },
+  {
+    "title": "How to add a custom widget to django-jet admin panel with custom dashboard?",
+    "link": "https://computergeeks.hashnode.dev/how-to-add-a-custom-widget-to-django-jet-admin-panel-with-custom-dashboard",
+    "description": "here's a step-by-step tutorial for adding a custom widget named TotalOrders to the Django-jet admin panel with a custom dashboard:\n\nFirst, make sure that you have installed the Django-jet library by running pip install django-jet.\n\nNext, create a Dja...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1677261454656/cebdd14c-75bf-421f-8b24-dba7e76dad9d.png"
+  },
+  {
+    "title": "Getting Started with Django",
+    "link": "https://computergeeks.hashnode.dev/getting-started-with-django",
+    "description": "Django is a popular open-source web framework written in Python. It follows the Model-View-Controller (MVC) architectural pattern and is designed to make web development faster and easier. With Django, you can quickly build complex web applications w...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/BI465ksrlWs/upload/ef5bcd8fd76467c7a69fdd8fbf665dea.jpeg"
+  },
+  {
+    "title": "Docker Swarm Management",
+    "link": "https://computergeeks.hashnode.dev/docker-swarm-management",
+    "description": "Docker Swarm is a native clustering and orchestration solution for Docker containers. It enables you to manage a group of Docker nodes as a single virtual system. With Docker Swarm, you can easily scale your applications, orchestrate the deployment o...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/jOqJbvo1P9g/upload/e9fa162ba450c35c99a2100a607921fb.jpeg"
+  },
+  {
+    "title": "Docker Swarm Cheatsheet",
+    "link": "https://computergeeks.hashnode.dev/docker-swarm-cheatsheet",
+    "description": "These commands are used to manage a Docker Swarm cluster, create and manage Docker services, and manage Docker networks.\n\ndocker network create -d overlay collabnet creates a new Docker overlay network named \"collabnet\".\n\ndocker network ls lists all ...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/SInhLTQouEk/upload/e66bad21448a2115ada613f8e2c66117.jpeg"
+  },
+  {
+    "title": "Docker Swarm",
+    "link": "https://computergeeks.hashnode.dev/docker-swarm",
+    "description": "What is a docker swarm?\nDocker Swarm is a tool that makes it easier to manage multiple Docker containers. With Docker Swarm, you can group containers and treat them as a single unit. This makes it easier to deploy, manage, and scale applications.\nThi...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/jOqJbvo1P9g/upload/7d00c4bf6555fd575c4a7e7747759f86.jpeg"
+  },
+  {
+    "title": "Docker Network",
+    "link": "https://computergeeks.hashnode.dev/docker-network",
+    "description": "Docker Networking: An Introduction\nDocker containers are a popular tool for deploying applications in a lightweight and portable manner. But to be truly useful, containers need to be able to communicate with each other, as well as with the wider netw...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/HjBOmBPbi9k/upload/db70a0da48d3db37d9eeaac73c91baf8.jpeg"
+  },
+  {
+    "title": "Docker",
+    "link": "https://computergeeks.hashnode.dev/docker",
+    "description": "Introduction\nDocker is a technology that helps make computer programs work better. It does this by putting the program and everything it needs to run (like libraries and other files) into a special package called a container. This makes it easier to ...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/HSACbYjZsqQ/upload/6bf16363b3011702e8222f0ef9d22fd2.jpeg"
+  },
+  {
+    "title": "Request and Response",
+    "link": "https://computergeeks.hashnode.dev/request-and-response",
+    "description": "Request and response cycle\nThe request-response cycle refers to the sequence of events that occur when a client sends an HTTP request to a server and the server sends back an HTTP response. The cycle includes the following steps:\n\nThe client sends an...",
+    "image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/YiX1jsdbWhY/upload/9e7dafbb7230f6dc1f10f66e31c29a2b.jpeg"
+  }
+]

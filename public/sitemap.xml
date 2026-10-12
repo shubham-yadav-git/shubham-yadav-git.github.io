@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://shubhamy.in/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://shubhamy.in/assets/img/og-image.jpg</image:loc>
+      <image:title>Shubham Yadav - Software Engineer and Test Automation Specialist</image:title>
+      <image:caption>Official portfolio of Shubham Yadav (Shubham) — Software Engineer, creator of WallApp, and automation specialist.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://shubhamy.in/assets/img/profile-image-web.jpg</image:loc>
+      <image:title>Shubham Yadav Profile</image:title>
+      <image:caption>Shubham Yadav - Software Engineer based in India.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wallapp.shubhamy.in/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
