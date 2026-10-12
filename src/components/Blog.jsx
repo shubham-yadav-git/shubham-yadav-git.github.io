@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './Blog.css';
+import Section from './Section';
 
 const FALLBACK_ARTICLES = [
   {
@@ -118,61 +118,38 @@ export default function Blog() {
   const hasMore = visibleCount < articles.length;
 
   return (
-    <section id="blog">
-      <div className="section-header">
-        <h2>Blog</h2>
-        <p>
-          Technical articles by Shubham Yadav covering backend architectures, Python automation,
-          Docker, and modern software engineering practices.
-        </p>
-      </div>
-
+    <Section
+      id="blog"
+      num={4}
+      title="Blog"
+      intro="Technical articles by Shubham Yadav covering backend architectures, Python automation, Docker, and modern software engineering practices."
+    >
       {loading ? (
-        <p className="blog-loading">Loading articles…</p>
+        <p className="loading">Loading articles…</p>
       ) : (
         <>
-          <div className="blog-grid">
+          <ol className="articles">
             {visible.map((article) => (
-              <article key={article.link} className="blog-card">
-                {article.image && (
-                  <div className="blog-card__img-wrap">
-                    <img
-                      src={article.image}
-                      alt=""
-                      className="blog-card__img"
-                      loading="lazy"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                )}
-                <div className="blog-card__body">
-                  <h3 className="blog-card__title">
+              <li key={article.link} className="article">
+                <div>
+                  <h3 className="article__title">
                     <a href={article.link} target="_blank" rel="noopener noreferrer">
                       {article.title}
                     </a>
                   </h3>
-                  <p className="blog-card__excerpt">
-                    {truncate(article.description, 180)}
-                  </p>
+                  <p className="article__excerpt">{truncate(article.description, 180)}</p>
                 </div>
-              </article>
+              </li>
             ))}
-          </div>
+          </ol>
 
           {hasMore && (
-            <div className="blog-more">
-              <button
-                className="blog-more__btn"
-                onClick={() => setVisibleCount((c) => c + 3)}
-              >
-                Load more
-              </button>
-            </div>
+            <button className="text-button" onClick={() => setVisibleCount((c) => c + 3)}>
+              Load more
+            </button>
           )}
         </>
       )}
-    </section>
+    </Section>
   );
 }

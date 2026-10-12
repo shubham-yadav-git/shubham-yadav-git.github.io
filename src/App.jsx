@@ -1,36 +1,23 @@
-import { useState } from 'react';
-import useActiveSection from './hooks/useActiveSection';
-import Sidebar from './components/Sidebar';
-import Hero from './components/Hero';
+import Masthead from './components/Masthead';
 import About from './components/About';
-import Skills from './components/Skills';
 import Resume from './components/Resume';
-import Projects from './components/Projects';
+import Skills from './components/Skills';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const activeSection = useActiveSection();
-
   return (
-    <div className="layout">
-      <Sidebar
-        activeSection={activeSection}
-        isMobileOpen={isMobileOpen}
-        setIsMobileOpen={setIsMobileOpen}
-      />
-      <div className="main-content">
-        <Hero />
+    <div className="page">
+      <Masthead />
+      <main>
         <About />
-        <Skills />
         <Resume />
-        <Projects />
+        <Skills />
         <Blog />
         <Contact />
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 }
