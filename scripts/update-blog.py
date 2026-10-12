@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 RSS_URL = "https://computergeeks.hashnode.dev/rss.xml"
-OUTPUT_PATH = Path(__file__).parents[1] / "assets" / "data" / "blog.json"
+OUTPUT_PATH = Path(__file__).parents[1] / "public" / "assets" / "data" / "blog.json"
 NAMESPACES = {
     "content": "http://purl.org/rss/1.0/modules/content/",
     "media": "http://search.yahoo.com/mrss/",
