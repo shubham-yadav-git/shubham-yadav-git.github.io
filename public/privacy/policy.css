@@ -1,0 +1,125 @@
+/* Shared styles for app privacy policies under /privacy/. Tokens mirror src/index.css. */
+
+:root {
+  --paper: #faf8f3;
+  --ink: #1c1a16;
+  --muted: #6a645a;
+  --faint: #9a9385;
+  --rule: #ddd6c8;
+  --accent: #8a2b1d;
+  --font-serif: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --measure: 42rem;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #161512;
+    --ink: #e6e1d6;
+    --muted: #a19a8c;
+    --faint: #6f695e;
+    --rule: #34312a;
+    --accent: #d68a74;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 18px; -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+  transition: text-decoration-color 120ms;
+}
+a:hover { color: var(--accent); text-decoration-color: currentColor; }
+a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+
+::selection { background: var(--accent); color: var(--paper); }
+
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 96px 24px 96px;
+}
+
+.head {
+  padding-bottom: 40px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.1em;
+  margin: 40px 0 16px;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  margin: 24px 0 8px;
+}
+
+p { margin-bottom: 16px; }
+
+ul { list-style: none; margin-bottom: 16px; }
+li { position: relative; padding-left: 24px; margin-bottom: 6px; }
+li::before { content: '–'; position: absolute; left: 0; color: var(--faint); }
+
+strong { font-weight: 600; }
+
+.facts {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 8px 16px;
+  align-items: baseline;
+}
+.facts dt {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (max-width: 640px) {
+  .page { padding-top: 56px; }
+  .facts { grid-template-columns: 1fr; gap: 0; }
+  .facts dd { margin-bottom: 8px; }
+}
